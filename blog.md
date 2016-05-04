@@ -1,17 +1,17 @@
 
 ## 2015下半年-2016上半年 ##
-（该期间，银联基于docker 的 DBAAS云平台 项目: docker生态+ 监控系统）
+（该期间，银联基于docker 的 DBAAS云平台 项目: docker生态+ 监控系统+couchbase）
 
 
 # **算法** #
 
 《大数据日知录__架构与算法》上 paxos,LSM树，bloom filter，ｈａｓｈ，数据分片，数据路由　等等（**强烈推荐这本书**）
 
-**在Youtube上输入关键字 也有很多不错的教学视频。**
+**在Youtube，slideshare上输入关键字**
 
-**分布式系统 blog: [银河里的星星](http://duanple.blog.163.com/)**
 
 ## **raft** ##
+- [raft](https://www.youtube.com/watch?v=YbZ3zDzDnrw)(youtube视频)
 - [raft 演示图](http://thesecretlivesofdata.com/raft/)
 - [《InSearch of an Understandable Consensus Algorithm》](https://ramcloud.stanford.edu/wiki/download/attachments/11370504/raft.pdf)
 - [Raft一致性算法](http://blog.csdn.net/cszhouwei/article/details/38374603)
@@ -28,9 +28,11 @@
 
 （paxos 算是P2p的算法，复杂，尤其证明它的正确性，还是喜欢相对简单master-slave逻辑。）
 
-- [图解分布式一致性协议Paxos](http://codemacro.com/2014/10/15/explain-poxos/)
+- [paxos](https://www.youtube.com/watch?v=JEpsBg0AO6o)(youtube视频)
+- [图解分布式一致性协议Paxos](http://codemacro.com/2014/10/15/explain-poxos/)&&[架构师需要了解的Paxos原理、历程及实战](http://weibo.com/ttarticle/p/show?id=2309403952892003376258)
 - [Paxos](https://en.wikipedia.org/wiki/Paxos_(computer_science) )
 - [Paxos算法](http://zh.wikipedia.org/zh-cn/Paxos算法)
+- [paxos.systems](http://paxos.systems/index.html)
 
 ## **Gossip** ##
 - [gossip](https://github.com/yucs/yucs-awesome-resource/blob/master/algorithms/gossip.pptx)
@@ -45,7 +47,7 @@
 - [一致性 hash 算法](http://blog.csdn.net/sparkliang/article/details/5279393)
 - [dht-consistent-hash](https://github.com/yucs/yucs-awesome-resource/blob/master/algorithms/dht-consistent-hash.pdf)
 - [Couchbase-Server-vBuckets](https://github.com/yucs/yucs-awesome-resource/blob/master/algorithms/Couchbase-Server-vBuckets(hash).pdf)
-(二级hash映射,产品实例思路，ceph 的CRUSH算法感觉也类似。)
+(二级hash映射,couchbase原理)
 
 **go语言实现包: https://github.com/stathat/consistent**
 
@@ -56,6 +58,12 @@ LSM:
 - [LSM树由来、设计思想以及应用到HBase的索引](http://www.cnblogs.com/yanghuahui/p/3483754.html)
 - [[HBase] LSM树 VS B+树](http://blog.csdn.net/dbanote/article/details/8897599)
 - [The Log-Structured Merge-Tree(译):上](http://duanple.blog.163.com/blog/static/7097176720120391321283/)
+
+MVCC:
+
+- [分布式系统的事务处理](http://coolshell.cn/articles/10910.html)
+- [多版本并发控制(MVCC)在分布式系统中的应用](http://coolshell.cn/articles/6790.html)
+
 
 协调系统（consul,etcd,zooKeeper）：
 
@@ -74,6 +82,7 @@ LSM:
 - [**microservices**](http://martinfowler.com/articles/microservices.html)
 - [**Microservice架构模式简介** ](http://www.cnblogs.com/loveis715/p/4644266.html)
 - [**Microservice Architecture - A Quick Guide**](http://colobu.com/2015/04/10/microservice-architecture-a-quick-guide/)
+- [微服务（Microservice）那点事](https://yq.aliyun.com/articles/2764?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
 
 # **docker生态** #
@@ -83,8 +92,16 @@ LSM:
 - [Cgroups介绍](https://sysadmincasts.com/episodes/14-introduction-to-linux--control-groups-cgroups) &&  [cgroups](http://www.slideshare.net/jpetazzo/anatomy-of-a-container-namespaces-cgroups-some-filesystem-magic-linuxcon?qid=358ef0f1-db29-4bb2-91ff-3817674ae0da&v=&b=&from_search=1) && [cgroups](http://www.slideshare.net/kerneltlv/namespaces-and-cgroups-the-basis-of-linux-containers?qid=769991d4-38c1-426d-bb89-0597cfdb362a&v=&b=&from_search=3)
 
 
-# **系统** #
- 
+# **系统&其它** #
+ (官网或者大部分介绍基本都是扬长避短，基本都是正面评价，优点往往都有相对于的代价与缺点，看些负面评价，了解其代价对理解还是是至关重要的,而这往往容易被忽悠的！)
+
+- [一个SDS问题引发的Ceph混战](http://chuansong.me/n/1635344)&[一位SDS创业者眼中的Ceph](http://blog.csdn.net/liuaigui/article/details/50103201)
+
+- [酷狗音乐的大数据平台重构](http://www.36dsj.com/archives/39898?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)(个人感觉算是比较正统的大数据技术栈)
+- [彻底厘清真实世界中的分布式系统](http://dockone.io/article/967?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+- [分布式缓存 Redis 使用心得](http://mp.weixin.qq.com/s?__biz=MzI4NTA1MDEwNg==&mid=402299559&idx=2&sn=f67df90675783b8e5cc1403b9cb26bfb&scene=0&from=groupmessage&isappinstalled=0#wechat_redirect)
+- 分布式系统 blog: [银河里的星星](http://duanple.blog.163.com/)
+
 
 
 
