@@ -1,6 +1,6 @@
 
 ## 2015下半年-2016上半年 ##
-（该期间，银联基于docker 的 DBAAS云平台 项目: docker生态+ 监控系统+couchbase）
+（该期间，做个云平台系统项目，更多关注分布式系统: docker生态+ 监控系统+ couchbase）
 
 
 # **算法** #
@@ -9,6 +9,7 @@
 
 **在Youtube，slideshare上输入关键字**
 
+- 分布式系统论文翻译 : [银河里的星星](http://duanple.blog.163.com/)
 
 ## **raft** ##
 - [raft](https://www.youtube.com/watch?v=YbZ3zDzDnrw)(youtube视频)
@@ -72,10 +73,10 @@ MVCC:
 - 《大数据日知录__架构与算法》第五章
 
 	
-我想研究docker,就必然会涉及到微服务，devops等关联性比较强的概念，可以从google的 k8s 文档直观感受到 .这三个在这两年能一起火起来，我想都是正回馈的。 
 
 # 微服务&容器  #
-  
+  我想研究docker,就必然会涉及到微服务，devops等关联性比较强的概念，可以从google的 k8s 文档直观感受到 .这三个在这两年能一起火起来，我想都是正回馈的。 
+
 - [**DevOps**](https://en.wikipedia.org/wiki/DevOps)
 - [**12-Factor（SAAS 软件即服务**）](http://12factor.net/zh_cn/)
 - [**introduction-to-microservices**](https://www.nginx.com/blog/introduction-to-microservices/)（网上有中文翻译）
@@ -83,6 +84,8 @@ MVCC:
 - [**Microservice架构模式简介** ](http://www.cnblogs.com/loveis715/p/4644266.html)
 - [**Microservice Architecture - A Quick Guide**](http://colobu.com/2015/04/10/microservice-architecture-a-quick-guide/)
 - [微服务（Microservice）那点事](https://yq.aliyun.com/articles/2764?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+- [Microservice 微服务的理论模型和现实路径](http://mp.weixin.qq.com/s?__biz=MzAxMTEyOTQ5OQ==&mid=2650610530&idx=1&sn=acd24986fe42181fcd81496f7a922f33#rd)
+- [Microservice Trade-Offs](http://martinfowler.com/articles/microservice-trade-offs.html?utm_source=wanqu.co&utm_campaign=Wanqu+Daily&utm_medium=website)
 
 
 # **docker生态** #
@@ -95,12 +98,17 @@ MVCC:
 # **系统&其它** #
  (官网或者大部分介绍基本都是扬长避短，基本都是正面评价，优点往往都有相对于的代价与缺点，看些负面评价，了解其代价对理解还是是至关重要的,而这往往容易被忽悠的！)
 
-- [一个SDS问题引发的Ceph混战](http://chuansong.me/n/1635344)&[一位SDS创业者眼中的Ceph](http://blog.csdn.net/liuaigui/article/details/50103201)
 
+- [Distributed systems theory for the distributed systems engineer](http://the-paper-trail.org/blog/distributed-systems-theory-for-the-distributed-systems-engineer/) 
+- [Fallacies of Distributed Computing Explained](https://pages.cs.wisc.edu/~zuyu/files/fallacies.pdf)(pdf)
+- [一个SDS问题引发的Ceph混战](http://chuansong.me/n/1635344)&[一位SDS创业者眼中的Ceph](http://blog.csdn.net/liuaigui/article/details/50103201)
 - [酷狗音乐的大数据平台重构](http://www.36dsj.com/archives/39898?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)(个人感觉算是比较正统的大数据技术栈)
 - [彻底厘清真实世界中的分布式系统](http://dockone.io/article/967?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
-- [分布式缓存 Redis 使用心得](http://mp.weixin.qq.com/s?__biz=MzI4NTA1MDEwNg==&mid=402299559&idx=2&sn=f67df90675783b8e5cc1403b9cb26bfb&scene=0&from=groupmessage&isappinstalled=0#wechat_redirect)
-- 分布式系统 blog: [银河里的星星](http://duanple.blog.163.com/)
+- [我在系统设计上犯过的14个错](https://yq.aliyun.com/articles/33077?spm=0.0.0.0.K6YprI)&[架构师画像](http://mp.weixin.qq.com/s?__biz=MjM5MzYzMzkyMQ==&mid=401938578&idx=1&sn=575e6cbef78f61516db0516d8c791373&scene=21)&[大型分布式系统设计的一些黄金原则和实例(视频)](http://www.infoq.com/cn/presentations/golden-principles-and-examples-of-large-scale-distributed-systems-design)
+
+
+- [介绍7种分析问题的思维方法](http://www.jianshu.com/p/8de3caacd48f)
+
 
 
 
