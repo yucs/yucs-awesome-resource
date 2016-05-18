@@ -10,7 +10,9 @@
 **在Youtube，slideshare上输入关键字**
 
 - 分布式系统论文翻译 : [银河里的星星](http://duanple.blog.163.com/)
-
+- github.com/theanalyst/awesome-distributed-systems
+- [Distributed systems theory for the distributed systems engineer](http://the-paper-trail.org/blog/distributed-systems-theory-for-the-distributed-systems-engineer/)
+- 
 ## **raft** ##
 - [raft](https://www.youtube.com/watch?v=YbZ3zDzDnrw)(youtube视频)
 - [raft 演示图](http://thesecretlivesofdata.com/raft/)
@@ -98,8 +100,8 @@ MVCC:
 # **系统&其它** #
  (官网或者大部分介绍基本都是扬长避短，基本都是正面评价，优点往往都有相对于的代价与缺点，看些负面评价，了解其代价对理解还是是至关重要的,而这往往容易被忽悠的！)
 
+- [Kafka深度解析](http://www.jasongj.com/2015/01/02/Kafka深度解析)
 
-- [Distributed systems theory for the distributed systems engineer](http://the-paper-trail.org/blog/distributed-systems-theory-for-the-distributed-systems-engineer/) 
 - [Fallacies of Distributed Computing Explained](https://pages.cs.wisc.edu/~zuyu/files/fallacies.pdf)(pdf)
 - [一个SDS问题引发的Ceph混战](http://chuansong.me/n/1635344)&[一位SDS创业者眼中的Ceph](http://blog.csdn.net/liuaigui/article/details/50103201)
 - [酷狗音乐的大数据平台重构](http://www.36dsj.com/archives/39898?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)(个人感觉算是比较正统的大数据技术栈)

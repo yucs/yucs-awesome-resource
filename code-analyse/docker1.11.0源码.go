@@ -20,7 +20,7 @@ c := cli.New(clientCli, daemonCli) // docker/daemon.go : daemonCli cli.Handler =
  //command api 流程:
   cli/cli.go -> api/client : CmdXXX -> engine-api (SDK 包装API)->  api/server -> s.backend.func ->daemon struct 动作(deamon目录)。 
 
-//daemon 启动流程：
+//docker daemon 启动流程：
   docker/daemon.go : 
  func (cli *DaemonCli) CmdDaemon(args ...string)
 
@@ -42,7 +42,7 @@ c := cli.New(clientCli, daemonCli) // docker/daemon.go : daemonCli cli.Handler =
                             // Discovery is only enabled when the daemon is launched with an address to advertise.  When
                           // initialized, the daemon is registered and we can store the discovery backend as its read-only
                            err := d.initDiscovery(config)
-                           //netork
+                           //network
                            d.netController, err = d.initNetworkController(config)
 
                            //  libcontainerd/remote_linux.go
@@ -106,10 +106,6 @@ Daemon目录下的 daemon.go:Daemon struct实现了Backend接口。
 其他network,graph 一样。 
 
 
-//with containerd /runc 
-
-
-
  
  //docker event 逻辑: 
   docker daemon 端：
@@ -127,8 +123,8 @@ Daemon目录下的 daemon.go:Daemon struct实现了Backend接口。
 	}
   }
 
- server api  注册 ：
 
+ server api  注册 ：
  api/server/router/system.go ：router.NewGetRoute("/events", r.getEvents),
 
 func (s *systemRouter) getEvents(ctx context.Context, w http.ResponseWriter, r *http.Request, vars map[string]string) error {
@@ -137,8 +133,10 @@ func (s *systemRouter) getEvents(ctx context.Context, w http.ResponseWriter, r *
 	defer output.Close()
 	output.Flush()
 
+
 	enc := json.NewEncoder(output)
 
+//向后端daemon 注册
 	buffered, l := s.backend.SubscribeToEvents(since, sinceNano, ef)
 	defer s.backend.UnsubscribeFromEvents(l)
      ... 
@@ -174,21 +172,12 @@ docker cli 端：
       responseBody, err := cli.client.Events(context.Background(), options)
  	  defer responseBody.Close()
       streamEvents(responseBody, cli.out)
-        decodeEvents(): 死函数 for{} GET 请求
-
-        结构体咋跟 官网文档 不一样？？（curl  0.0.0.0:2375/events?since=1455606562）
+        decodeEvents(): 死函数 for{} GET 请求 ： 对应于(s *systemRouter) getEvents： enc.Encode(jev)
 
 
 
 
-
-
-
-
-
-
-   //volume plugin:
-
+//volume plugin:
 type Daemon struct {
       volumes                   *store.VolumeStore
 }

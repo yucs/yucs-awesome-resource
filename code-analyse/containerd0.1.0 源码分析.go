@@ -1,3 +1,12 @@
+
+
+/*
+  源码分析部分：
+  		启动流程： 队列管理框架
+  		API流程:  start接口
+  		docker-containerd-shim 
+*/
+//containerd/main.go:
 func daemon(address, stateDir string, concurrency int, runtimeName string, runtimeArgs []string) error 
     sv, err := supervisor.New(stateDir, runtimeName, runtimeArgs)  
                      go s.exitHandler()
@@ -11,10 +20,9 @@ func daemon(address, stateDir string, concurrency int, runtimeName string, runti
 	for i := 0; i < concurrency; i++ {
 		wg.Add(1)
 		w := supervisor.NewWorker(sv, wg)
-		go w.Start()
+		go w.Start() //(w *worker) Start()
 	}
-	if err := sv.Start(); err != nil {
-		      //一个goroutine 见 func (s *Supervisor) Start() 
+	if err := sv.Start(); err != nil {  //开启一个goroutine，接受task队列， 见 func (s *Supervisor) Start() 
 		return err
 	}
 
@@ -33,7 +41,7 @@ task 加入job chanl 队列 ,startTasks执行队列
 	 defer w.wg.Done()
 	 //startTasks := make(chan *startTask, 10) chan 会死循环在这。
 	 for t := range w.s.startTasks {
-	 	  //runtime\container_linux.go
+	 	  //runtime/container_linux.go
 	 	  process, err := t.Container.Start(t.Checkpoint, runtime.NewStdio(t.Stdin, t.Stdout, t.Stderr))
 	 	  err := w.s.monitor.MonitorOOM(t.Container); err != nil && err != runtime.ErrContainerExited
 	 	  err := w.s.monitorProcess(process); err != nil 
@@ -58,7 +66,8 @@ task 加入job chanl 队列 ,startTasks执行队列
 	return nil
 }
 
-//*****supervisor_linux.go
+//*****supervisor/supervisor_linux.go
+
 func (s *Supervisor) handleTask(i Task) {
 	var err error
 	switch t := i.(type) {
@@ -98,7 +107,7 @@ func (s *Supervisor) handleTask(i Task) {
 }
 
 
-//API start 路口
+//API流程:  start接口
 // api/grpc/server_linux.go 
 func (s *apiServer) CreateContainer
 	e := &supervisor.StartTask{}
@@ -184,7 +193,7 @@ func (w *worker) Start() 调用
 	err := p.start();
   }
 
-//containerd-shim\process.go
+//containerd-shim/process.go
 func (p *process) start() error {
 	cwd, err := os.Getwd()
 	if err != nil {
