@@ -1,11 +1,13 @@
 
 # 2015.9-now #
-工作： 在银联基于docker的数据库管理云平台（基于go语言）
+工作： 在银联基于docker的数据库管理云平台（基于go语言)
+
 期间主要研究方向：分布式系统,系统架构，couchbase,docker/swarm,consul
 
-- **blog**：[blog精粹集(分布式算法和系统&docker&微服务)](https://github.com/yucs/yucs-awesome-resource/blob/master/blog.md)
-- **书籍**：[学习推荐书籍(分布式系统)](https://github.com/yucs/yucs-awesome-resource/blob/master/book.md)
+- **blog**：[blog精粹集(分布式算法和系统&docker&微服务)](https://github.com/yucs/yucs-awesome-resource/blob/master/blog%E7%B2%BE%E7%B2%B9%E9%9B%86(%E5%88%86%E5%B8%83%E5%BC%8F%E7%AE%97%E6%B3%95%E5%92%8C%E7%B3%BB%E7%BB%9F%26docker%26%E5%BE%AE%E6%9C%8D%E5%8A%A1).md)
+- **书籍**：[学习推荐书籍(分布式系统)](https://github.com/yucs/yucs-awesome-resource/blob/master/%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E4%B9%A6%E7%B1%8D(%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F).md)
 - **总结**: 待写... 
+- **源码**：[docker1.11.0源码分析，swarm1.1.0源码分析，containerd0.1.0源码分析](https://github.com/yucs/yucs-awesome-resource/tree/master/code-analyse)（自己看）
 
 # 2015.4-2015.8 #
 来上海，第一份工作：云存储的SDK开发（多语言：nodejs/go/python/php/C/C++),web OAuth授权等其他杂活
@@ -26,5 +28,5 @@
 - **书籍**： [学习书籍整合推荐（linux/存储/虚拟化/网络）](http://blog.csdn.net/u010129347/article/details/43699973)（包括大学期间）
 
 - **总结**: [2014个人总结](http://blog.csdn.net/u010129347/article/details/43935727)
-- 源码分析：[glusterfs(3.5.1) 源码框架学习归纳总结](http://blog.csdn.net/u010129347/article/details/43955397)
+- **源码**：[glusterfs(3.5.1) 源码框架学习归纳总结](http://blog.csdn.net/u010129347/article/details/43955397)
 
