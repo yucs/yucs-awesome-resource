@@ -102,7 +102,6 @@ MVCC:
 
 - [Kafka深度解析](http://www.jasongj.com/2015/01/02/Kafka深度解析)
 
-- [Fallacies of Distributed Computing Explained](https://pages.cs.wisc.edu/~zuyu/files/fallacies.pdf)(pdf)
 - [一个SDS问题引发的Ceph混战](http://chuansong.me/n/1635344)&[一位SDS创业者眼中的Ceph](http://blog.csdn.net/liuaigui/article/details/50103201)
 - [酷狗音乐的大数据平台重构](http://www.36dsj.com/archives/39898?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)(个人感觉算是比较正统的大数据技术栈)
 - [彻底厘清真实世界中的分布式系统](http://dockone.io/article/967?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
