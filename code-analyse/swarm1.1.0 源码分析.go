@@ -2,8 +2,10 @@
 源码分析部分：
   swam manager/join 启动流程
   Discovery底层实现 
+  github.com/docker/libkv包分析（watch/Lock机制）
   API请求路径
 */
+  
 main.go:
  cli.Run()
 //cli/cli.go: 
@@ -118,7 +120,7 @@ go cluster.monitorDiscovery(discoveryCh, errCh)
 
 
 
-//-----Discovery底层实现
+//-----Discovery底层实现(github.com/docker/libkv)
 /*
 "github.com/docker/libkv/store"
  type Discovery struct {
@@ -130,6 +132,7 @@ go cluster.monitorDiscovery(discoveryCh, errCh)
 	path      string
 }
 */
+
 createDiscovery(uri, c, c.StringSlice("discovery-opt"))
   hb, err := time.ParseDuration(c.String("heartbeat")) 
   //github.com/docker/docker/pkg/discovery
@@ -152,7 +155,7 @@ Init() 注册:   //在 discovery/kv/kv.go
 
 //在 discovery/kv/kv.go:
  Initialize(): 
-    //这s.backend 为 consuL "github.com/docker/libkv"
+    //这s.backend 为 consuL "github.com/docker/libkv" 
     s.store, err = libkv.NewStore(s.backend, addrs, config) 
     //init 就是 Init 注册的 init 即，New函数
     //consul 的话 ，就在github.com/docker/libkv/store/consul/consul.go
@@ -166,12 +169,42 @@ Init() 注册:   //在 discovery/kv/kv.go
 	   client, err := api.NewClient(config)
 	   s.client = client
 
+//github.com/docker/libkv 组织结构:
+  store/store.go抽象出etcd,consuld等操作接口：Store interface,KVpair对象等等
+  store/store/consul等子目录就是具体实现这些接口。
+
+LOCK机制：
+   consul（session+周期更新这个session + 相关API接口,而不是简单调个接口就好了）： 
+		// Create the key session 
+          session, _, err := s.client.Session().Create(entry, nil)
+		// Place the session and renew chan on lock
+          l, err := s.client.LockOpts(lockOpts)
+		// Renew the session ttl lock periodically
+          s.renewLockSession(entry.TTL, session, options.RenewLock)
 
 
-
-
-
-
+WATCH机制：
+  consul: 没有watch接口，不是notify方式， 通过协程+GET() 来实现：
+           kv := s.client.KV()
+         // Use a wait time in order to check if we should quit
+		// from time to time.
+		 go func(){
+		 	for{
+		 		opts := &api.QueryOptions{WaitTime: DefaultWatchWaitTime}
+			   pair, meta, err := kv.Get(key, opts)
+		       ...
+		 	}
+		 
+		 	}
+  etcd；watch 机制：
+        watcher := s.client.Watcher(s.normalize(key), opts)
+        	go func() {
+        		for {
+        			...
+        			result, err := watcher.Next(context.Background())
+        		    ...
+        		}
+        	}
 
 //----------
 swarm join 作用:（调用后可以不用了？） 一直存在，为了swarm manager？重启后可以重发现？
