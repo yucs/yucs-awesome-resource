@@ -5,8 +5,10 @@
 
 
 # 微服务&容器  #
+  
   我想研究docker,就必然会涉及到微服务，devops等关联性比较强的概念，可以从google的 k8s 文档直观感受到 .这三个在这两年能一起火起来，我想都是正回馈的。 
-
+  
+- **资源：https://github.com/mfornos/awesome-microservices**
 
 - [**DevOps**](https://en.wikipedia.org/wiki/DevOps)
 - [**introduction-to-microservices**](https://www.nginx.com/blog/introduction-to-microservices/)（网上有中文翻译）
@@ -40,32 +42,17 @@ docker:
 - [我在系统设计上犯过的14个错](https://yq.aliyun.com/articles/33077?spm=0.0.0.0.K6YprI)&[架构师画像](http://mp.weixin.qq.com/s?__biz=MjM5MzYzMzkyMQ==&mid=401938578&idx=1&sn=575e6cbef78f61516db0516d8c791373&scene=21)&[大型分布式系统设计的一些黄金原则和实例(视频)](http://www.infoq.com/cn/presentations/golden-principles-and-examples-of-large-scale-distributed-systems-design)
 
 - [介绍7种分析问题的思维方法](http://www.jianshu.com/p/8de3caacd48f)
-
+##译文##
+[Dapper，大规模分布式系统的跟踪系统](http://bigbully.github.io/Dapper-translation/)（项目：Zipkin）
 ## **raft** ##
-- [raft](https://www.youtube.com/watch?v=YbZ3zDzDnrw)(youtube视频)
+- [raft](https://www.youtube.com/watch?v=YbZ3zDzDnrw)&[paxos](https://www.youtube.com/watch?v=JEpsBg0AO6o)(youtube视频) 
 - [raft 演示图](http://thesecretlivesofdata.com/raft/)
 - [《InSearch of an Understandable Consensus Algorithm》](https://ramcloud.stanford.edu/wiki/download/attachments/11370504/raft.pdf)
 - [Raft一致性算法](http://blog.csdn.net/cszhouwei/article/details/38374603)
 - [Raft一致性算法分析与总结](http://www.thinkingyu.com/articles/Raft/)
 - [CoreOS 实战：剖析 etcd](http://www.infoq.com/cn/articles/coreos-analyse-etcd)
-
- go语言实现包: 
-
- - godoc.org/github.com/coreos/etcd/raft 
- - https://github.com/hashicorp/raft （consul项目）       
-  
-
-## **paxos** ##
-
-（paxos 算是P2p的算法，复杂，尤其证明它的正确性，还是喜欢相对简单master-slave逻辑。）
-(待加强理解)
-
-- [paxos](https://www.youtube.com/watch?v=JEpsBg0AO6o)(youtube视频)
-- [图解分布式一致性协议Paxos](http://codemacro.com/2014/10/15/explain-poxos/)&&[架构师需要了解的Paxos原理、历程及实战](http://weibo.com/ttarticle/p/show?id=2309403952892003376258)
-- [Paxos](https://en.wikipedia.org/wiki/Paxos_(computer_science) )
-- [Paxos算法](http://zh.wikipedia.org/zh-cn/Paxos算法)
-- [paxos.systems](http://paxos.systems/index.html)
-
+ 
+ 
 ## **Gossip** ##
 - [gossip](https://github.com/yucs/yucs-awesome-resource/blob/master/algorithms/gossip.pptx)
 - [gossip base algorithms](https://github.com/yucs/yucs-awesome-resource/blob/master/algorithms/gossip%20base%20algorithms.pdf)
@@ -87,7 +74,6 @@ LSM:
 
 - [LSM树由来、设计思想以及应用到HBase的索引](http://www.cnblogs.com/yanghuahui/p/3483754.html)
 - [[HBase] LSM树 VS B+树](http://blog.csdn.net/dbanote/article/details/8897599)
-- [The Log-Structured Merge-Tree(译):上](http://duanple.blog.163.com/blog/static/7097176720120391321283/)
 
 MVCC:
 

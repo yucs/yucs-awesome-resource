@@ -1,5 +1,5 @@
 
-# 2015.9-now #
+# 2015.9-2016.6 #
 工作： 在银联基于docker的数据库管理云平台（基于go语言)
 
 期间主要研究方向：分布式系统,系统架构，couchbase,docker/swarm,consul
