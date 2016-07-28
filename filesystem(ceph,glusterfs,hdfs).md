@@ -37,8 +37,14 @@
   - 元数据存储在内存里， master 的操作是很快的； Master 并没有永久保存 chunk 的位置信息，而是在 master启动或者某个 chunkserver 加入集群时，它会向每个 chunkserver 询问它的 chunks信息。
   - 操作日志包含了关键元数据改变的历史记录，Master 通过重新执行操作日志来恢复它的文件系统。
 
- **HDFS** 
+ **HDFS **
 
+- 作为GFS的开源版，整体框架，使用场景类似：大文件；商用硬件；追加写 ，少随机写；多顺序读，少随机读； 优化带宽而非延迟 等。
+
+- 主控服务器 当点失效问题：**HA方案(NFS备份)**或 **NameNode 联盟（二级名称节点）**
+
+- [HDFS详解](http://my.oschina.net/crxy/blog/348868)&&[【漫画解读】HDFS存储原理](http://www.36dsj.com/archives/41391)（[英文版](http://www.slideshare.net/jaganadhg/hdfs-10509123)）
+- [Hdfs Design(官网)](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html)
   
 
 HayStack 对象存储系统
