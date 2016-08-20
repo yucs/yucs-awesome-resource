@@ -1,11 +1,15 @@
+
+http://www.containertutorials.com/swarmkit/architecture.html
+https://blog.docker.com/2016/07/docker-built-in-orchestration-ready-for-production-docker-1-12-goes-ga/
+//dockerd 区别
+//github.com\docker\docker\cmd\dockerd\docker.go 
+
 #跟docker 1.11.0变化：
    [Docker 1.12.0将要发布的新功能](http://liubin.org/blog/2016/06/17/whats-new-in-docker-1-dot-12-dot-0/)
 #源码布局，大体流程没大的区别
 
-主要分析 新加入 跟swamkit集成的部分。
+主要分析 集成到docker1.12 的swarmkit。
 
-//dockerd 区别
-//github.com\docker\docker\cmd\dockerd\docker.go 
 	daemonCli = NewDaemonCli()
 	err = daemonCli.start()
 	func (cli *DaemonCli) start() (err error)
@@ -88,6 +92,7 @@ server:
 												remoteAddr, _ := n.remotes.Select(n.nodeID)
 												    //"github.com/docker/swarmkit/manager"
 													m, err := manager.New(&manager.Config{ForceNewCluster: n.config.ForceNewCluster,JoinRaft:  remoteAddr.Addr,})	
+													   	    创建文件
 													   	    RaftNode := raft.NewNode(context.TODO(), newNodeOpts)
 												
 															m := &Manager{
@@ -104,8 +109,9 @@ server:
 													go func() {
 														// Run starts all manager sub-systems and the gRPC server at the configured
 														// address.
+														//分析见下面
 														m.Run(context.Background()) // todo: store error
-					
+																	
 													}()
 													n.manager = m	
 													...	
@@ -157,6 +163,7 @@ server:
 										}()
 
 										go func() {
+											//agent 先起来
 											<-agentReady
 											if role == ca.ManagerRole {
 												<-managerReady
@@ -170,13 +177,7 @@ server:
   							c.saveState()
 							c.config.Backend.SetClusterProvider(c)
 
-					 		开启3个携程：	
-					 		return node, nil
-					  select {
-						case <-n.Ready():
-						case <-n.done:
-					   } 
-
+				
 //docker node ls
 //github.com\docker\docker\api\client\node\list.go
 cli: newListCommand(dockerCli *client.DockerCli) 
@@ -269,10 +270,129 @@ router.NewGetRoute("/nodes", sr.getNodes),
                        r, err := c.client.CreateService(ctx, &swarmapi.CreateServiceRequest{Spec: &serviceSpec})
                        // github.com\docker\docker\daemon\cluster\cluster.go
                         func (s *Server) CreateService(ctx context.Context, request *api.CreateServiceRequest)
-                       			//对表的操作？ 实际动作？
-                        	//update 封装的，会对raft进行操作,其实就是raft的内存状态吧？
+    						//见下 swamkit state分析
+
                        		err := s.store.Update(func(tx store.Tx) error {
 									return store.CreateService(tx, service)
 							 })
-    
+                       		然后GlobalOrchestrator会接收到event,来创建，异步，类似消息队列！
+                             //(g *GlobalOrchestrator) Run(ctx context.Context)
 
+  //github.com\docker\swarmkit\manager\manager.go
+func (m *Manager) Run(parent context.Context) 
+leadershipCh, cancel := m.RaftNode.SubscribeLeadership()
+go func()
+ if newState == raft.IsLeader 
+	s := m.RaftNode.MemoryStore()
+	s.Update(func(tx store.Tx) error {
+		store.CreateCluster(tx, &api.Cluster{...})
+		// Add Node entry for ourself, if one doesn't exist already.
+		store.CreateNode(tx, &api.Node{..})
+	})
+	m.replicatedOrchestrator = orchestrator.NewReplicatedOrchestrator(s)
+	m.globalOrchestrator = orchestrator.NewGlobalOrchestrator(s)
+	m.taskReaper = orchestrator.NewTaskReaper(s)
+	m.scheduler = scheduler.New(s)
+	m.keyManager = keymanager.New(m.RaftNode.MemoryStore(), keymanager.DefaultConfig()
+
+	m.allocator, err = allocator.New(s)
+
+	go func(keyManager *keymanager.KeyManager) {
+		if err := keyManager.Run(ctx); err != nil {
+			log.G(ctx).WithError(err).Error("keymanager failed with an error")
+		}
+	}(m.keyManager)
+
+	go func(d *dispatcher.Dispatcher) {
+		if err := d.Run(ctx); err != nil {
+			log.G(ctx).WithError(err).Error("Dispatcher exited with an error")
+		}
+	}(m.Dispatcher)
+
+	go func(server *ca.Server) {
+		if err := server.Run(ctx); err != nil {
+			log.G(ctx).WithError(err).Error("CA signer exited with an error")
+		}
+	}(m.caserver)
+else if newState == raft.IsFollower
+		m.Dispatcher.Stop()
+		 m.caserver.Stop()
+		 m.replicatedOrchestrator.Stop()
+		 ...
+
+
+baseControlAPI := controlapi.NewServer(m.RaftNode.MemoryStore(), m.RaftNode, m.config.SecurityConfig.RootCA())
+healthServer := health.NewHealthServer()
+...
+
+
+// Set the raft server as serving for the health server
+healthServer.SetServingStatus("Raft", api.HealthCheckResponse_SERVING)
+m.RaftNode.JoinAndStart();
+go func() {
+		err := m.RaftNode.Run(ctx)
+		}
+err := raft.WaitForLeader(ctx, m.RaftNode); 
+c, err := raft.WaitForCluster(ctx, m.RaftNode）			
+
+
+//state
+	   raft目录：raft协议  实现proposer.go:Proposer 接口
+	   store目录：基于go-memdb内存，各个文件一个表，init()初始化表；
+	  		// MemoryStore is a concurrency-safe, in-memory implementation of the Store interface.
+				type MemoryStore struct 封装create,View,Update等操作，
+       func (s *MemoryStore) update(proposer state.Proposer, cb func(Tx) error)
+       		
+		    var tx tx
+			tx.init(memDBTx, curVersion)
+
+			err := cb(&tx)
+       		
+
+       		// (tx *tx) update(table string, o Object)等封装都会
+       		/// tx.changelist = append(tx.changelist，。。）
+       		 sa, err = tx.changelistStoreActions()
+
+       		 //先持久化到raft，再提交内存	
+        	 proposer.ProposeValue(context.Background(), sa, func() {
+						memDBTx.Commit()
+					})
+        	 for _, c := range tx.changelist {
+				s.queue.Publish(c)
+			}
+			if len(tx.changelist) != 0 {
+				s.queue.Publish(state.EventCommit{})
+			}
+        watch目录：
+        watch:"github.com/docker/go-events"
+
+//orchestrator
+    开3个
+   	m.replicatedOrchestrator = orchestrator.NewReplicatedOrchestrator(s)
+	m.globalOrchestrator = orchestrator.NewGlobalOrchestrator(s)
+	m.taskReaper = orchestrator.NewTaskReaper(s)
+
+  //github.com\docker\swarmkit\manager\orchestrator\global.go
+  func (g *GlobalOrchestrator) Run(ctx context.Context)
+    	
+	监听queue
+	// Watch changes to services and tasks
+	queue := g.store.WatchQueue()
+	watcher, cancel := queue.Watch()
+
+	//获取集群，节点，服务
+	store.FindClusters(readTx, store.ByName("default"))
+	store.FindNodes(readTx, store.All)
+	store.FindServices(readTx, store.All)
+
+	for {
+		select {
+		case event := <-watcher:
+			  switch v := event.(type) {
+			    case state.EventUpdateCluster:
+			    case state.EventCreateService:
+			    	... 
+			  }
+		}
+	}
+//异步
