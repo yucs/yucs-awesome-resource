@@ -10,37 +10,6 @@ https://blog.docker.com/2016/07/docker-built-in-orchestration-ready-for-producti
 
 主要分析 集成到docker1.12 的swarmkit。
 
-	daemonCli = NewDaemonCli()
-	err = daemonCli.start()
-	func (cli *DaemonCli) start() (err error)
-		 api := apiserver.New(serverConfig)
-		 cli.api = api
-		 registryService := registry.NewService(cli.Config.ServiceOptions)
-		 containerdRemote, err := libcontainerd.New(cli.getLibcontainerdRoot(), cli.getPlatformRemoteOptions()...)
-		 pluginInit(cli.Config, containerdRemote, registryService)
-
-		//	"github.com/docker/docker/daemon"
-	  //"github.com/docker/docker/daemon/cluster"
-		 d, err := daemon.NewDaemon(cli.Config, registryService, containerdRemote)
-		 c, err := cluster.New(cluster.Config{
-				Root:    cli.Config.Root,
-				Name:    name,
-				Backend: d,
-			})
-		      st, err := c.loadState() 
-		      n, err := c.startNewNode(false, st.ListenAddr, "", "", "", false)
-		 cli.initMiddlewares(api, serverConfig)
-		 initRouter(api, d, c)
-				routers := []router.Router{
-					container.NewRouter(d, decoder),
-					image.NewRouter(d, decoder),
-					systemrouter.NewRouter(d, c),
-					volume.NewRouter(d),
-					build.NewRouter(dockerfile.NewBuildManager(d)),
-					swarmrouter.NewRouter(c),
-				}
-		 go api.Wait(serveAPIWait)
-
 
 //swarm init
 cli: 调用docker swarm init命令：
@@ -67,7 +36,6 @@ server:
 							//swarmkit 代码
 							//swarmagent "github.com/docker/swarmkit/agent"
 							//github.com\docker\swarmkit\agent\node.go
-							//swarmkit 客户端？
 
 							n, err := swarmagent.NewNode(&swarmagent.NodeConfig{...})
 								n := &Node{remotes: newPersistentRemotes(stateFile, p...)}
@@ -248,14 +216,6 @@ router.NewGetRoute("/nodes", sr.getNodes),
 
 
 
-//docker swarm join --secret <SECRET> <MANAGER-IP>:<PORT>
-       //github.com\docker\docker\api\server\router\swarm\cluster.go
-		router.NewPostRoute("/swarm/join", sr.joinCluster),
-		func (c *Cluster) Join(req types.JoinRequest)
-		   //注意跟init 参数不同。看swam init
-		   n, err := c.startNewNode(false, req.ListenAddr, req.RemoteAddrs[0], req.Secret, req.CACertHash, req.Manager)
-		   certificateRequested := n.CertificateRequested()
-		   错误处理
 
 // docker service create --replicas 1 --name helloworld alpine ping docker.com
 		//github.com\docker\docker\api\server\router\swarm\cluster.go
@@ -278,11 +238,12 @@ router.NewGetRoute("/nodes", sr.getNodes),
                        		然后GlobalOrchestrator会接收到event,来创建，异步，类似消息队列！
                              //(g *GlobalOrchestrator) Run(ctx context.Context)
 
-  //github.com\docker\swarmkit\manager\manager.go
+//github.com\docker\swarmkit\manager\manager.go
 func (m *Manager) Run(parent context.Context) 
 leadershipCh, cancel := m.RaftNode.SubscribeLeadership()
 go func()
  if newState == raft.IsLeader 
+ 	//开启服务
 	s := m.RaftNode.MemoryStore()
 	s.Update(func(tx store.Tx) error {
 		store.CreateCluster(tx, &api.Cluster{...})
@@ -315,6 +276,7 @@ go func()
 		}
 	}(m.caserver)
 else if newState == raft.IsFollower
+		//停止服务
 		m.Dispatcher.Stop()
 		 m.caserver.Stop()
 		 m.replicatedOrchestrator.Stop()
@@ -395,4 +357,3 @@ c, err := raft.WaitForCluster(ctx, m.RaftNode）
 			  }
 		}
 	}
-//异步

@@ -28,7 +28,7 @@
  - **客户端**（无元数据节点，直接根据计算获取读写位置）：
 client通过monitor获取CRUSH map等集群信息,用户看到的文件 根据文件位置 进行**分片**（ceph集群默认存储object:4M）：通过librados库根据CRUSH算法（**二级映射**: object（ceph集群里的object）->PG->OSDS; **CRUSH**：根据一棵主机拓扑树，递归算出osd列表）,映射到具体的OSDs 上，客户端 直接与osd通信，读写数据。
 - **RADOS**：Ceph Monitor 和 Ceph OSD Daemon集群核心,monitor基于paxos等维护表信息，osds状态等,类似协调系统，数据修复以PG为单位。Block Devices,Object Storage,Filesystem都在这RADOS上封装，
-- osd目前通过filestore机制,主备通过plog协议来保证一致性;下个版本默认将是 Newstore：[ceph存储引擎bluestore解析](http://www.sysnote.org/2016/08/19/ceph-bluestore/)&[Ceph Jewel 版本预览 : 即将到来的新存储BlueStore](http://bbs.ceph.org.cn/article/63)&[BlueStore: a new, faster storage backend for Ceph]()
+- osd目前通过filestore机制,主备通过plog协议来保证一致性;因写log,多一次IO，写放大问题，下个版本默认将是 Newstore：[ceph存储引擎bluestore解析](http://www.sysnote.org/2016/08/19/ceph-bluestore/)&[Ceph Jewel 版本预览 : 即将到来的新存储BlueStore](http://bbs.ceph.org.cn/article/63)&[BlueStore: a new, faster storage backend for Ceph]()
 参考：
  - [Ceph的IO模式分析](http://www.openstack.cn/?p=4270)
  - [Ceph对象存储运维惊魂72小时](http://ceph.org.cn/2016/05/08/ceph%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E8%BF%90%E7%BB%B4%E6%83%8A%E9%AD%8272%E5%B0%8F%E6%97%B6/)
