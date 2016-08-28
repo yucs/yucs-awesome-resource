@@ -1,4 +1,14 @@
-#分布式文件系统#
+
+##HDFS&glusterfs&ceph 个人理解对比
+
+- glusterfs: 无元数据节点，兼容PAXOS接口的文件系统，可以理解无分片（无建条带层情况下），目录层次，ls等获取列表很卡，架构特点像网络协议栈，一层层处理后数据传到下一层。
+
+
+- ceph:基于RADOS，无元数据节点，基于CRUSH算法，**分片和二级映射**，底层默认存储单位4M。个人觉得最优雅在于：monitor存储的各种表（类似kubernetes,swamkit的desired state一样）, 客户端和OSD 获取这状态（单异常时，monitor会更新，主动或被动通知他们），osd和客户端就会以新表 数据自动迁移，自动修复，自动获取，即客户端和OSD之间无需通信 以规定的协议 来就好了，问题也导致了当有节点掉了，OSD之间自动不受控制的数据修复，很可能导致性能下降，甚至整个集群时间内不可用。
+
+- HDFS:设计目的是：大文件；商用硬件；追加写 ，少随机写；多顺序读，少随机读； 优化带宽而非延迟 等，可见应用场景不适合做docker，KVM等镜像文件这样有随机读写的。有MASTER节点来控制数据迁移，修复等，整体设计相对简单些，控制都由master。
+
+
 - 都要要回答的问题是：  
   - 添加/删除节点的数据负载均衡的问题
   - 文件数据以 何种方式如何分布c存储在集群节点中,是否有元数据节点
@@ -6,18 +16,9 @@
   - IO读写流程
 
 
-
-**[杨锦涛：主流开源存储方案孰优孰劣](http://www.infoq.com/cn/interviews/interview-with-yangjintao-talk-open-source-storage-scheme#0-youdao-1-28677-32553cecb956bf88a1550052113e506a)**
-
-
-**HDFS&glusterfs&ceph 对比**
-
-- glusterfs: 无元数据节点，兼容PAXOS接口，可以理解无分片，目录层次，ls等获取列表很卡，架构特点像网络协议栈，一层层处理后数据传到下一层。
+参考：**[杨锦涛：主流开源存储方案孰优孰劣](http://www.infoq.com/cn/interviews/interview-with-yangjintao-talk-open-source-storage-scheme#0-youdao-1-28677-32553cecb956bf88a1550052113e506a)**
 
 
-- ceph:基于RADOS，无元数据节点，基于CRUSH算法，**分片和二级映射**，底层默认存储单位4M。个人觉得最优雅在于：monitor存储的各种表（类似kubernetes,swamkit的desired state一样）, 客户端和OSD 获取这状态（单异常时，monitor会更新，主动或被动通知他们），osd和客户端就会以新表 数据自动迁移，自动修复，自动获取，即客户端和OSD之间无需通信 以规定的协议 来就好了，问题也导致了当有节点掉了，OSD之间自动不受控制的数据修复，很可能导致性能下降，甚至整个集群时间内不可用。
-
-- HDFS:设计目的是：大文件；商用硬件；追加写 ，少随机写；多顺序读，少随机读； 优化带宽而非延迟 等，可见应用场景不适合做docker，KVM等镜像文件这样有随机读写的。有MASTER节点来控制数据迁移，修复等，整体设计相对简单些，控制都由master。
 
 ## ceph ##
 介绍框架：[architecture](http://docs.ceph.com/docs/master/architecture/)&[Ceph架构剖析](https://www.ustack.com/blog/ceph_infra/)
