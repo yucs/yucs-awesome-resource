@@ -6,9 +6,9 @@
 主要开发语言：golang
 
 - [  对 习惯/分布式/开发语言 的思考](https://github.com/yucs/yucs-awesome-resource/blob/master/2015-2016收获.md)
-- [etcd协调系统/Nosql/kafka/grpc](https://github.com/yucs/yucs-awesome-resource/blob/master/%E5%8D%8F%E8%B0%83%E7%B3%BB%2B%E7%BB%9F%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%2Bnosql.md)
+- [etcd协调系统/Nosql/kafka/grpc](https://github.com/yucs/yucs-awesome-resource/blob/master/%E5%8D%8F%E8%B0%83%E7%B3%BB%E7%BB%9F%2B%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%2Bnosql.md)
 - [ceph/glusterfs/hdfs 分布式文件系统](https://github.com/yucs/yucs-awesome-resource/blob/master/filesystem(ceph%2Cglusterfs%2Chdfs).md)
-- [学习开发语言的见解]()
+- [学习开发语言的见解](https://github.com/yucs/yucs-awesome-resource/blob/master/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80.md)
 - [容器生态(k8s/swarmkit/docker)]()
 - [blog精粹集(分布式算法和系统&docker&微服务)](https://github.com/yucs/yucs-awesome-resource/blob/master/blog%E7%B2%BE%E7%B2%B9%E9%9B%86(%E5%88%86%E5%B8%83%E5%BC%8F%E7%AE%97%E6%B3%95%E5%92%8C%E7%B3%BB%E7%BB%9F%26docker%26%E5%BE%AE%E6%9C%8D%E5%8A%A1).md)
 - 书籍推荐：[分布式系统方向](https://github.com/yucs/yucs-awesome-resource/blob/master/%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E4%B9%A6%E7%B1%8D(%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F).md)
