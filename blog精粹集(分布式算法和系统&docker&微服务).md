@@ -6,10 +6,6 @@
 
 # 微服务&容器  #
   
-  我想研究docker,就必然会涉及到微服务，devops等关联性比较强的概念，可以从google的 k8s 文档直观感受到 .这三个在这两年能一起火起来，我想都是正回馈的。 
-  
-- **资源：https://github.com/mfornos/awesome-microservices**
-
 - [**DevOps**](https://en.wikipedia.org/wiki/DevOps)
 - [**introduction-to-microservices**](https://www.nginx.com/blog/introduction-to-microservices/)（网上有中文翻译）
 - [**microservices**](http://martinfowler.com/articles/microservices.html)&[Microservices 翻译](https://yq.aliyun.com/articles/38515?spm=5176.blog2764.yqblogcon1.56.iuH8ug)

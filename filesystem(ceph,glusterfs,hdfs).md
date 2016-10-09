@@ -43,6 +43,8 @@ client通过monitor获取CRUSH map等集群信息,用户看到的文件 根据�
  - 网上相关源码分析
  - [http://www.sysnote.org/](http://www.sysnote.org/)跟ceph相关的文章,质量都不错
  - 麦子迈的[http://www.wzxue.com/ceph-storage/](http://www.wzxue.com/ceph-storage/)，现在在公众号**ceph开发每周谈** 发表了。
+
+---
 ### HDFS&GFS ###
 **主要参考**
 
