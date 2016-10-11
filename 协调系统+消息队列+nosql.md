@@ -52,15 +52,17 @@
 
 ###kafka
 
--  **主要作用: 系统级解耦 + 异步通信 + 峰值处理能力 +[送达保证：至少送达一次|丢失|保证只送达一次...]**
+-  **主要作用: 系统级解耦 + 异步通信 + 峰值处理能力 +扩展性+[送达保证：至少送达一次|丢失|保证只送达一次...]+[顺序保证]**
 -  **通用技术：生产者消费者模式 + pub-sub订阅模式+ pull|push [+持久化]**
 - **RabbitMQ/kafka**: 在大数据处理在收集各类资源，以kafka主流；RabbitMQ重量级系统，遵循AMQP协议，具有较强功能和相对广泛的使用场景（企业级偏功能而非收集），但是扩展性和性能相对低。
-- [Kafka深度解析](http://www.jasongj.com/2015/01/02/Kafka深度解析)（消息队列作用+常用Message Queue对比+Kafka解析 都总结的很好 ）&& [Kafka技术内幕](http://zqhxuyuan.github.io/2017/01/01/Kafka-Code-Index/)(ps:网上相关文章还是比较多且质量都比较高的)
+- **参考资源**:**[Kafka深度解析](http://www.jasongj.com/2015/01/02/Kafka深度解析)**（消息队列作用+常用Message Queue对比+Kafka解析 都总结的很好 ）&& [Kafka技术内幕](http://zqhxuyuan.github.io/2017/01/01/Kafka-Code-Index/)&&**[apache kafka技术分享目录索引（好）](http://blog.csdn.net/lizhitao/article/details/39499283)**(ps:网上相关文章还是比较多且质量都比较高的)
 - **kafka主要技术**：
 	 - 生产者 根据topic **push**数据到 Broker,消费者 从Broker **pull** 数据； 至少送达一次；
-	 - 支持topic进行数据分片，并且数据是有序，不可更改的**追加**到消息队列上，并存储到具体文件上进行持久化；消费者端内存维护Offset索引，可以通过修改索引来读过期数据；（**高效处理大批数据的重要原因就是将读写操作尽可能转化为顺序读写**）
+	 - 支持topic进行数据分片，并且数据是有序，不可更改的**追加**到消息队列上，并存储到具体文件上进行持久化；消费者端内存维护Offset索引，可以通过修改索引来读过期数据；（**高效处理大批数据的重要原因就是将读写操作尽可能转化为顺序读写**）,利用linux内核的文件系统自身的缓存机制，sendfile system call减少数据的内核用户的拷贝。
+	 - topic上消息会**广播**到所有的comsumer groups,每个comsumer group只会把消息**单传**到一个comsumer.
 	 - 通过Zokeeper来存放配置信息，offset索引，侦测Broker 的加入和删除 来扩展；
 	 - 副本机制也是Master-slave模式，读写都有master来响应，通过ISR机制来保证多副本的一致性；
+	 -[apache Kafka概要介绍](http://blog.csdn.net/lizhitao/article/details/23743821)(**好**)
 
 	 - [design](http://kafka.apache.org/documentation.html#design)(官网 讲的比较好了)&&[为什么Kafka那么快](http://mp.weixin.qq.com/s?__biz=MzIxMjAzMDA1MQ==&mid=2648945468&idx=1&sn=b622788361b384e152080b60e5ea69a7#rd)
    		
