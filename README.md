@@ -5,7 +5,7 @@
 
 主要开发语言：golang
 
-- [  对 习惯/分布式/开发语言 的思考](https://github.com/yucs/yucs-awesome-resource/blob/master/2015-2016收获.md)
+- [  对 习惯/分布式/开发语言 的思考总结](https://github.com/yucs/yucs-awesome-resource/blob/master/2015-2016收获.md)（好）
 - [etcd协调系统/Nosql/kafka/grpc](https://github.com/yucs/yucs-awesome-resource/blob/master/%E5%8D%8F%E8%B0%83%E7%B3%BB%E7%BB%9F%2B%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97(kafka).md)
 - [ceph/glusterfs/hdfs 分布式文件系统](https://github.com/yucs/yucs-awesome-resource/blob/master/filesystem(ceph%2Cglusterfs%2Chdfs).md)
 - [学习开发语言的见解](https://github.com/yucs/yucs-awesome-resource/blob/master/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80.md)
@@ -21,7 +21,6 @@
 
 ##工作
 # 2015.9-2016.6 #
-工作： 在银联基于docker的数据库管理云平台（基于go语言)
 
 期间主要研究方向：分布式系统,系统架构，couchbase,docker/swarm,consul
 
@@ -31,7 +30,6 @@
 - **源码**：[docker1.11.0源码分析，swarm1.1.0源码分析，containerd0.1.0源码分析](https://github.com/yucs/yucs-awesome-resource/tree/master/code-analyse)（自己看）
 
 # 2015.4-2015.8 #
-来上海，第一份工作：云存储的SDK开发（多语言：nodejs/go/python/php/C/C++),web OAuth授权等其他杂活
 
 期间主要研究方向：接触nodejs,go等语言，web框架，自学机器学习
 
