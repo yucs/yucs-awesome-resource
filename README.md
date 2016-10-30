@@ -11,13 +11,16 @@
 - [学习开发语言的见解](https://github.com/yucs/yucs-awesome-resource/blob/master/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80.md)
 - [容器生态(k8s/swarmkit/docker)](https://github.com/yucs/yucs-awesome-resource/blob/master/%E5%AE%B9%E5%99%A8%E7%94%9F%E6%80%81.md)
 - [blog精粹集(分布式算法和系统&docker&微服务)](https://github.com/yucs/yucs-awesome-resource/blob/master/blog%E7%B2%BE%E7%B2%B9%E9%9B%86(%E5%88%86%E5%B8%83%E5%BC%8F%E7%AE%97%E6%B3%95%E5%92%8C%E7%B3%BB%E7%BB%9F%26docker%26%E5%BE%AE%E6%9C%8D%E5%8A%A1).md)
-- 书籍推荐：[分布式系统方向](https://github.com/yucs/yucs-awesome-resource/blob/master/%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E4%B9%A6%E7%B1%8D(%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F).md)
+
 
 ###2014-2015(上) 年
 研究：linux系统，glusterfs分布式文件系统，虚拟化（KVM),接触openstack
 主要开发语言：C/C++,shell脚本
 
-
+##推荐书籍
+- [分布式系统方向](https://github.com/yucs/yucs-awesome-resource/blob/master/%E5%AD%A6%E4%B9%A0%E6%8E%A8%E8%8D%90%E4%B9%A6%E7%B1%8D(%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F).md)(2015-2016)
+- [golang/web后端/机器学习入门](http://blog.csdn.net/u010129347/article/details/46601571)(2015)
+- [linux/存储/KVM虚拟化/网络](http://blog.csdn.net/u010129347/article/details/43699973)（2014-2015）
 
 ##工作
 # 2015.9-2016.6 #
@@ -34,7 +37,7 @@
 期间主要研究方向：接触nodejs,go等语言，web框架，自学机器学习
 
 - **blog**: [两日当头，鱼逆游山高处](http://blog.csdn.net/u010129347) 
-- **书籍**：[学习推荐书籍（golang ,web ,机器学习）](http://blog.csdn.net/u010129347/article/details/46601571)
+- **书籍**：[学习推荐书籍（golang/web后端/机器学习入门）](http://blog.csdn.net/u010129347/article/details/46601571)
 - **源码**：看些go标准包的实现，[做些leetcode题目](https://github.com/yucs/leetcode)
 
 # 2014.2-2015-1 #
@@ -44,7 +47,7 @@
 
  - **blog**: [两日当头，鱼逆游山高处](http://blog.csdn.net/u010129347)
 
-- **书籍**： [学习书籍整合推荐（linux/存储/虚拟化/网络）](http://blog.csdn.net/u010129347/article/details/43699973)（包括大学期间）
+- **书籍**： [linux/存储/KVM虚拟化/网络](http://blog.csdn.net/u010129347/article/details/43699973)（包括大学期间）
 
 - **总结**: [2014个人总结](http://blog.csdn.net/u010129347/article/details/43935727)
 - **源码**：[glusterfs(3.5.1) 源码框架学习归纳总结](http://blog.csdn.net/u010129347/article/details/43955397)
