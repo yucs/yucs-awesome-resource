@@ -128,4 +128,7 @@ PVcontroller: [Kubernetes 存储功能和源码深度解析（二）](http://doc
 
 -----
 本文出处：https://yucs.github.io/2017/12/14/2017-12-14-kubernetes_volume/
+
+markdown文件放在 [github.com/yucs/yucs-awesome-resource](https://github.com/yucs/yucs-awesome-resource) 持续更新，欢迎star ,watch
+
 如有出入请请教，文章持续更新中...
