@@ -3,7 +3,7 @@
 set -o errexit
 set -o nounset
 set -o pipefail
-set -x
+#set -x
 
 YUCS_GITHUB_IO_DIR="/Users/yucs/work/yucs.github.io"
 POST_DIR="${YUCS_GITHUB_IO_DIR}/source/_posts"

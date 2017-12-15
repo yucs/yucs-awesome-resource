@@ -1,54 +1,33 @@
-# kubernetes extend API 
-两种方式：
- api接口
-- [Kubernetes API 分析 ( Kube-apiserver )](https://www.kubernetes.org.cn/3119.html)
-
-https://kubernetes.io/docs/api-reference/v1.8/#-strong-api-overview-strong-
-
-https://thenewstack.io/extend-kubernetes-1-7-custom-resources/
-
-https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/
-
-https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md
-
-https://coreos.com/blog/introducing-operators.html
-
-https://blog.openshift.com/kubernetes-deep-dive-api-server-part-1/
-https://blog.openshift.com/kubernetes-deep-dive-api-server-part-2/
-https://blog.openshift.com/kubernetes-deep-dive-api-server-part-3a/
 
 
 
 
 
 
-最新1.8 重构过，代码差异比较大：[Kubernetes1.5源码分析(一) apiServer启动分析](http://dockone.io/article/2159)
-[apiserver的list-watch代码解读](https://www.kubernetes.org.cn/174.html)
+
+#通过CustomResources&&controller扩展kubernetes
+
+根据需求，与其他Pod等公民一样，先用CustomResources扩展添加新Resource,用controller来达到预期状态。
+
+Operator核心就是通过CustomResources扩展添加新Resource组合实现。
 
 
-[Kubernetes Informer 详解](https://www.kubernetes.org.cn/2693.html)
+# controller
+[A Deep Dive Into Kubernetes Controllers
+](https://engineering.bitnami.com/articles/a-deep-dive-into-kubernetes-controllers.html)
 
-[如何用 client-go 拓展 Kubernetes 的 API](http://www.k8smeetup.com/article/VJsZn@nT7)
+[kubewatch-an-example-of-kubernetes-custom-controller](https://engineering.bitnami.com/articles/kubewatch-an-example-of-kubernetes-custom-controller.html)
 
- [使用 client-go 控制原生及拓展的 Kubernetes API](https://my.oschina.net/caicloud/blog/829365)
+
+官方社区给出的开发controller指导： [kubernetes/community:controllers](https://github.com/kubernetes/community/blob/8decfe4/contributors/devel/controllers.md)
+
+
  
- 
-[Kubernetes Scheduler是如何工作的](http://dockone.io/article/2625)
-重构比较大:
-从Kubernetes 1.7开始，所有需要监控资源变化情况的调用均推荐使用Informer。Informer提供了基于事件通知的只读缓存机制，可以注册资源变化的回调函数，并可以极大减少API的调用。
-
-![pod_create](/picture/pod_create.png)
+- Kubernetes runs a group of controllers that take care of routine tasks to ensure the desired state of the cluster matches the observed stat.(each controller is responsible for a particular resource in the Kubernetes world).
  
 
 
-http://blog.csdn.net/WaltonWang/article/list/1
-
-http://cizixs.com/ 
- 
- 
-我们发现为什么部署这些有状态的应用和部署管理它们会比无状态的复杂呢？是因为它们有这些复杂的运维和逻辑在里面 
-#controller
-https://github.com/kubernetes/community/blob/8decfe4/contributors/devel/controllers.md
+- 伪代码模型：
 
 ```go
 for {
@@ -58,8 +37,54 @@ for {
 }
 ```
 
+- client-go包的Informer/SharedInformer 
+  - Informer/SharedInformer watches for changes on the current state of Kubernetes objects and sends events to Workqueue where events are then popped up by worker(s) to process.（从Kubernetes 1.7开始，所有需要监控资源变化情况的调用均推荐使用Informer。Informer提供了基于事件通知的只读缓存机制，可以注册资源变化的回调函数，并可以极大减少API的调用。）
+  - [Kubernetes Informer 详解](https://www.kubernetes.org.cn/2693.html)
+  - [如何用 client-go 拓展 Kubernetes 的 API](http://www.k8smeetup.com/article/VJsZn@nT7) 
+
+- 处理函数：
+  - client-go包封装了获取事件变化和针对对异步的队列框架机制，我们只需实现处理逻辑接口：
+
+ ```go
+     type ResourceEventHandlerFuncs struct {
+	AddFunc    func(obj interface{})
+	UpdateFunc func(oldObj, newObj interface{})
+	DeleteFunc func(obj interface{})
+}
+ ```
+  
+# CustomResources
+[kubernetes 指南：customresourcedefinition](https://kubernetes.feisky.xyz/concepts/customresourcedefinition.html)
+
+官方相关文档： [custom-resources](https://kubernetes.io/docs/concepts/api-extension/custom-resources), [extend-api-custom-resource-definitions](https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/)
+
+- 无需改变代码来扩展 Kubernetes API 的机制，用来管理自定义对象.
+
+代码级例子 : [extend-kubernetes-1-7-custom-resources](https://thenewstack.io/extend-kubernetes-1-7-custom-resources/)
+
+ - For any new resource, you follow the same methodology:
+   - Define the resource schema;
+   - Register the resource with the API service and provide proper APIs;
+   - Implement a controller which will watch for resource spec changes and make sure your application complies with the desired state.
+
+- [example-code](https://github.com/yaronha/kube-crd)
+
+通过工具生成相关代码： [code-generation-customresources](https://blog.openshift.com/kubernetes-deep-dive-code-generation-customresources/)
+
+# 其他相关开发资源
+- [client-go](https://github.com/kubernetes/client-go)
+  - [使用 client-go 控制原生及拓展的 Kubernetes API](https://my.oschina.net/caicloud/blog/829365)
+
+- **[使用 Operator 来扩展 Kubernetes(视频)](https://k8smeetup.maodou.io/course/hFRDJyzkdWXPFanyY)**
+  
+
+ 
 
 
-[](https://zhuanlan.zhihu.com/p/27229692?utm_source=wechat_session&utm_medium=social)
 
-[使用 Operator 来扩展 Kubernetes(视频)](https://k8smeetup.maodou.io/course/hFRDJyzkdWXPFanyY)
+
+
+
+
+
+

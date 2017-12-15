@@ -49,7 +49,64 @@ https://github.com/kubernetes/client-go
 
 
 [ kubernetes集群问题排查](http://blog.csdn.net/huwh_/article/details/71308301)
+# kubernetes extend API 
 
+两种方式：
+
+ api接口
+- [Kubernetes API 分析 ( Kube-apiserver )](https://www.kubernetes.org.cn/3119.html)
+
+https://kubernetes.io/docs/api-reference/v1.8/#-strong-api-overview-strong-
+
+
+
+https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md
+
+https://coreos.com/blog/introducing-operators.html
+
+https://blog.openshift.com/kubernetes-deep-dive-api-server-part-1/
+https://blog.openshift.com/kubernetes-deep-dive-api-server-part-2/
+https://blog.openshift.com/kubernetes-deep-dive-api-server-part-3a/
+
+
+
+ 
+[Kubernetes Scheduler是如何工作的](http://dockone.io/article/2625)
+重构比较大:
+
+
+![pod_create](/picture/pod_create.png)
+ 
+
+
+http://blog.csdn.net/WaltonWang/article/list/1
+
+http://cizixs.com/ 
+ 
+ 
+我们发现为什么部署这些有状态的应用和部署管理它们会比无状态的复杂呢？是因为它们有这些复杂的运维和逻辑在里面 
+
+# 源码分析 
+- node conroller
+   
+  - [Kubernetes Node Controller源码分析之配置篇](http://blog.csdn.net/waltonwang/article/details/75269847)
+
+  - [Kubernetes Node Controller源码分析之执行篇]()
+
+  - [Kubernetes Node Controller源码分析之创建篇](http://blog.csdn.net/waltonwang/article/details/76359220)
+
+  - [Kubernetes Node Controller源码分析之Taint Controller](http://blog.csdn.net/waltonwang/article/details/76474386)
+
+
+
+
+
+最新1.8 重构过，代码差异比较大：[Kubernetes1.5源码分析(一) apiServer启动分析](http://dockone.io/article/2159)
+[apiserver的list-watch代码解读](https://www.kubernetes.org.cn/174.html)
+
+
+
+ 
 
 
 http://cizixs.com/
