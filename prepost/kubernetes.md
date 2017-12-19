@@ -56,13 +56,11 @@ https://github.com/kubernetes/client-go
  api接口
 - [Kubernetes API 分析 ( Kube-apiserver )](https://www.kubernetes.org.cn/3119.html)
 
-https://kubernetes.io/docs/api-reference/v1.8/#-strong-api-overview-strong-
 
 
 
 https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md
 
-https://coreos.com/blog/introducing-operators.html
 
 https://blog.openshift.com/kubernetes-deep-dive-api-server-part-1/
 https://blog.openshift.com/kubernetes-deep-dive-api-server-part-2/
@@ -84,7 +82,7 @@ http://blog.csdn.net/WaltonWang/article/list/1
 http://cizixs.com/ 
  
  
-我们发现为什么部署这些有状态的应用和部署管理它们会比无状态的复杂呢？是因为它们有这些复杂的运维和逻辑在里面 
+
 
 # 源码分析 
 - node conroller
