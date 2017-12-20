@@ -7,6 +7,7 @@ set -o pipefail
 
 YUCS_GITHUB_IO_DIR="/Users/yucs/work/yucs.github.io"
 POST_DIR="${YUCS_GITHUB_IO_DIR}/source/_posts"
+POST_PICTURE_DIR="${YUCS_GITHUB_IO_DIR}/themes/next/source/picture/"
 PWD_DIR=`pwd`
 
 function chechout_branch(){
@@ -23,12 +24,19 @@ function cp_markdown(){
         cd ${dir}
 
         if [  "`ls | grep '.md' `" != "" ]; then 
-	       cp *.md  ${POST_DIR}
-	    fi 
+	         cp *.md  ${POST_DIR}
+	      fi 
 
 	    cd ..
    done 
 }
+
+
+function cp_picture(){
+   cp  ./picture/* ${POST_PICTURE_DIR}
+}
+
+
 
 function hexo_deloy(){
 
@@ -50,10 +58,11 @@ chechout_branch
 
 cp_markdown
 
+cp_picture
+
 if [ $# != 0 ];then
    	hexo_deloy
 else
 	hexo_local_test
-
 fi
 
