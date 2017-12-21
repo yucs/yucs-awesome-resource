@@ -1,20 +1,50 @@
 
-- **微课堂：** [IBM开源技术微讲堂 kuberntes系列](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/W30b0c771924e_49d2_b3b7_88a2a2bc2e43/page/IBM%E5%BC%80%E6%BA%90%E6%8A%80%E6%9C%AF%E5%BE%AE%E8%AE%B2%E5%A0%82)
+---
+layout:     post
+title:      "kubernetes 学习资源汇总"
+subtitle:   "kubernetes 学习资源汇总"
+date:       2018-12-21
+author:     "yucs"
+catalog:    true
+categories: 
+	- Kubernetes
+
+tags:
+    - Kubernetes
+      
+---
 
 - **资讯：** [weekly.dockone.io](http://weekly.dockone.io/index)
 
 - **gitbook:[Kubernetes指南](https://github.com/feiskyer/kubernetes-handbook)**（系统全面）
 - **gitbook: [kubernetes-handbook](https://github.com/rootsongjc/kubernetes-handbook)**(偏向实践)
-- [Cloud Native Landscape](https://github.com/cncf/landscape)
 
+- **微课堂：** [IBM开源技术微讲堂 kuberntes系列](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/W30b0c771924e_49d2_b3b7_88a2a2bc2e43/page/IBM%E5%BC%80%E6%BA%90%E6%8A%80%E6%9C%AF%E5%BE%AE%E8%AE%B2%E5%A0%82)
 -  技术博客
   - [我的kubernets整理学习系列](https://yucs.github.io/categories/Kubernetes/)
-  - [cizixs](http://cizixs.com/) 
+  - [cizixs](http://cizixs.com/) （主要kubelet源码分析）
   - [WaltonWang](http://blog.csdn.net/WaltonWang/article/list/1)（源码分析多）
  
 
 --------
-# 集群部署 
+
+[我的kubernets整理学习系列](https://yucs.github.io/categories/Kubernetes/)各文章包含的链接就不在这重复列出
+
+# 生态
+- [Cloud Native Landscape](https://github.com/cncf/landscape)
+   - [CNCF charter](https://www.cncf.io/about/charter/)
+   - CNCF是一个开源Linux基金会，它致力于推进云端原生应用和服务的开发
+   - CNCF 的一项重要承诺，就是为基于容器的各类技术的集成确立参考架。
+
+
+- 三大标准：
+  - 网络CNI
+  - 存储CSI
+  - 运行OCI:
+
+
+
+# 部署 
 - [利用Ansible部署kubernetes集群](https://github.com/gjmzj/kubeasz)： 官方kubeadm下载的镜像需要翻墙，国内网络环境下使用[AllInOne](https://github.com/gjmzj/kubeasz/blob/master/docs/quickStart.md)部署更方便，单机多主机部署都支持。
 
 <!--  - 基于二进制方式部署和利用ansible-playbook实现自动化：既提供一键安装脚本，也可以分步执行安装各个组件，同时讲解每一步主要参数配置和注意事项。
@@ -50,9 +80,6 @@
 [apiserver的list-watch代码解读](https://www.kubernetes.org.cn/174.html)-->
 
 
-
-
-
 # controller
 [kube-controller-manager 分析](https://ggaaooppeenngg.github.io/zh-CN/2017/11/27/kube-controller-%E5%88%86%E6%9E%90/)
 
@@ -71,10 +98,11 @@
 --> 
 
 
-
-
-
-
+# event
+- [Kubernetes(K8s)Events介绍（上）](https://www.kubernetes.org.cn/1031.html)
+- [Kubernetes Events介绍（中）](https://www.kubernetes.org.cn/1090.html)
+- [Kubernetes Events介绍（下）](https://www.kubernetes.org.cn/1195.html)
+- [kubelet 源码分析： 事件处理](http://cizixs.com/2017/06/22/kubelet-source-code-analysis-part4-event)
  
 
-
+ 
