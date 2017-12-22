@@ -1,3 +1,18 @@
+---
+layout:     post
+title:      "kubernetes的思考和那些标准"
+subtitle:   "kubernetes的思考和那些标准"
+date:       2017-12-25
+author:     "yucs"
+catalog:    true
+categories: 
+	- Kubernetes
+
+tags:
+    - Kubernetes
+     
+---
+ 
 # 思考
 - CNCF生态被业界认可，在容器编排领域，K8s已然是事实标准:
    - 部署方面：kubernetes及社区 已经能够简单快速的搭建和部署 ，这样才能更好的普及。

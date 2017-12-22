@@ -3,7 +3,7 @@
 layout:     post
 title:      "kubernetes 学习资源汇总"
 subtitle:   "kubernetes 学习资源汇总"
-date:       2018-12-22
+date:       2017-12-22
 author:     "yucs"
 catalog:    true
 categories: 
