@@ -3,7 +3,7 @@
 layout:     post
 title:      "kubernetes 学习资源汇总"
 subtitle:   "kubernetes 学习资源汇总"
-date:       2018-12-21
+date:       2018-12-22
 author:     "yucs"
 catalog:    true
 categories: 
@@ -11,7 +11,7 @@ categories:
 
 tags:
     - Kubernetes
-      
+     
 ---
 
 - **资讯：** [weekly.dockone.io](http://weekly.dockone.io/index)
@@ -29,19 +29,6 @@ tags:
 --------
 
 [我的kubernets整理学习系列](https://yucs.github.io/categories/Kubernetes/)各文章包含的链接就不在这重复列出
-
-# 生态
-- [Cloud Native Landscape](https://github.com/cncf/landscape)
-   - [CNCF charter](https://www.cncf.io/about/charter/)
-   - CNCF是一个开源Linux基金会，它致力于推进云端原生应用和服务的开发
-   - CNCF 的一项重要承诺，就是为基于容器的各类技术的集成确立参考架。
-
-
-- 三大标准：
-  - 网络CNI
-  - 存储CSI
-  - 运行OCI:
-
 
 
 # 部署 

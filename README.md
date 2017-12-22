@@ -1,6 +1,11 @@
 
 
+# blog: **[https://yucs.github.io/](https://yucs.github.io/)**
+
+
+
 # 2017.12
+- [kubernetes 学习资源汇总（持续更新）](./kubernetes/2017-12-22-kubernetes_resource.md)
 - [开发operator扩展kubernetes 资源整理](./kubernetes/2017-12-21-operator.md)
 - [Kubernetes之存储学习整理](./kubernetes/2017-12-14-kubernetes_volume.md)
 - [分布式系统之基础介绍](./distrubte_system/2017-12-9-分布式系统原理之基础介绍.md) 
