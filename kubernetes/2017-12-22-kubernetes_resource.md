@@ -20,10 +20,12 @@ tags:
 - **gitbook: [kubernetes-handbook](https://github.com/rootsongjc/kubernetes-handbook)**(偏向实践)
 
 - **微课堂：** [IBM开源技术微讲堂 kuberntes系列](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/W30b0c771924e_49d2_b3b7_88a2a2bc2e43/page/IBM%E5%BC%80%E6%BA%90%E6%8A%80%E6%9C%AF%E5%BE%AE%E8%AE%B2%E5%A0%82)
+
+
 -  技术博客
-  - [我的kubernets整理学习系列](https://yucs.github.io/categories/Kubernetes/)
-  - [cizixs](http://cizixs.com/) （主要kubelet源码分析）
-  - [WaltonWang](http://blog.csdn.net/WaltonWang/article/list/1)（源码分析多）
+    - [我的kubernets整理学习系列](https://yucs.github.io/categories/Kubernetes/)
+	- [cizixs](http://cizixs.com/) （主要kubelet源码分析）
+	- [WaltonWang](http://blog.csdn.net/WaltonWang/article/list/1)（源码分析多）
  
 
 --------
