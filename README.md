@@ -3,6 +3,8 @@
 # blog: **[https://yucs.github.io/](https://yucs.github.io/)**
 
 
+持续更新 k8s,区块链，分布式 相关的文章。。 
+
 # 2017.12
 - [kubernetes的思考和那些标准](./kubernetes/2017-12-25-kubernetes_interface.md)
 - [kubernetes 学习资源汇总（持续更新）](./kubernetes/2017-12-22-kubernetes_resource.md)
