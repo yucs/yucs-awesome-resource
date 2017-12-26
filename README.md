@@ -3,8 +3,8 @@
 # blog: **[https://yucs.github.io/](https://yucs.github.io/)**
 
 
-
 # 2017.12
+- [kubernetes的思考和那些标准](./kubernetes/2017-12-25-kubernetes_interface.md)
 - [kubernetes 学习资源汇总（持续更新）](./kubernetes/2017-12-22-kubernetes_resource.md)
 - [开发operator扩展kubernetes 资源整理](./kubernetes/2017-12-21-operator.md)
 - [Kubernetes之存储学习整理](./kubernetes/2017-12-14-kubernetes_volume.md)

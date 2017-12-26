@@ -30,16 +30,19 @@ tags:
 
 --------
 
-<!--[我的kubernets整理学习系列](https://yucs.github.io/categories/Kubernetes/)各文章包含的链接就不在这重复列出
+# 实践生态
+[Kubernetes的工业级实践](https://mp.weixin.qq.com/s/vyUi1V4pmYQr5_9T2Qqygg)
 
+<!--[我的kubernets整理学习系列](https://yucs.github.io/categories/Kubernetes/)各文章包含的链接就不在这重复列出
+-->
 
 # 部署 
 - [利用Ansible部署kubernetes集群](https://github.com/gjmzj/kubeasz)： 官方kubeadm下载的镜像需要翻墙，国内网络环境下使用[AllInOne](https://github.com/gjmzj/kubeasz/blob/master/docs/quickStart.md)部署更方便，单机多主机部署都支持。
--->
-<!--  - 基于二进制方式部署和利用ansible-playbook实现自动化：既提供一键安装脚本，也可以分步执行安装各个组件，同时讲解每一步主要参数配置和注意事项。
+
+ - 基于二进制方式部署和利用ansible-playbook实现自动化：既提供一键安装脚本，也可以分步执行安装各个组件，同时讲解每一步主要参数配置和注意事项。
  
   - 二进制方式部署优势：有助于理解系统各组件的交互原理和熟悉组件启动参数，有助于快速排查解决实际问题
--->
+
 
 <!---
 - [Kubernetes指南 之 kubeadm工作原理](https://github.com/feiskyer/kubernetes-handbook/blob/master/components/kubeadm.md)
@@ -70,7 +73,7 @@ tags:
 
 
 # controller
-[kube-controller-manager 分析](https://ggaaooppeenngg.github.io/zh-CN/2017/11/27/kube-controller-%E5%88%86%E6%9E%90/)
+- [kube-controller-manager 分析](https://ggaaooppeenngg.github.io/zh-CN/2017/11/27/kube-controller-%E5%88%86%E6%9E%90/)
 
 <!--- node conroller
    
