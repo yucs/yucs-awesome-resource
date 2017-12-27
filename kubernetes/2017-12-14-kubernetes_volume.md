@@ -119,7 +119,7 @@ PVcontroller: [Kubernetes 存储功能和源码深度解析（二）](http://doc
 # 开发资源
 - volume plugin
  - 基于[FlexVolume](https://github.com/kubernetes/community/blob/master/contributors/devel/flexvolume.md):  [lvm](https://github.com/kubernetes/kubernetes/tree/master/examples/volumes/flexvolume)
- - 基于[CSI](https://github.com/container-storage-interface/spec/blob/master/spec.md): 等待 k8s release 版本支持后
+ - 基于[CSI](https://github.com/container-storage-interface/spec/blob/master/spec.md)：[community:storage_design](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/container-storage-interface.md)
 
 - Out-of-Tree Provisioner
  - 由于在Pod中声明volume有局限性，要更灵活的化，就需要pv controller等进行生命周期的管理。
