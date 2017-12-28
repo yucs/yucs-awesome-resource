@@ -16,7 +16,7 @@ tags:
 # 思考
 - CNCF生态被业界认可，在容器编排领域，K8s已然是事实标准:
    - 部署方面：kubernetes及社区 已经能够简单快速的搭建和部署 ，这样才能更好的普及。
-   - 稳定标准化方面：各种标准化完善被业界认可，核心功能整体架构等 趋于稳定；标准化某种意义就是避免被绑架。
+   - 稳定标准化方面：各种标准化被业界统一认可，核心功能整体架构等 趋于稳定；标准化某种意义就是避免被绑架。
    - 开发定制方面:整体架构的优雅灵活，系统可扩展性好，根据需求在不侵入源码下，可定制性强（client-go项目对开发友好），这样才能更好的解决各公司内部需求，实践落地成功。   
    - 活跃度方面：贡献参与者多，社区活跃度高，各大公司的认可，无论存储，网络，容器方面都提供更多现成的选择，功能也越来越丰富，生态整体向好。
 
@@ -86,6 +86,8 @@ tags:
 [CSI spce](https://github.com/container-storage-interface/spec/blob/master/spec.md)
 
 [Kubernetes存储介绍系列 ——CSI plugin设计](http://newto.me/k8s-csi-design/)
+
+[design-proposals:csi](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/container-storage-interface.md)
 
 - CSI是Container Storage Interface的简称，旨在能为容器编排引擎和存储系统间建立一套标准的存储调用接口，通过该接口能为容器编排引擎提供存储服务。
 - 在CSI之前，K8S里提供存储服务是通过一种称为“in-tree”的方式来提供，这种方式需要将存储提供者的代码逻辑放到K8S的代码库中运行，调用引擎与插件间属于强耦合，持这套标准以后，K8S和存储提供者之间将彻底解耦。
