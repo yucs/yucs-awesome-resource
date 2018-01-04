@@ -21,7 +21,7 @@ tags:
 
 - **微课堂：** [IBM开源技术微讲堂 kuberntes系列](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/W30b0c771924e_49d2_b3b7_88a2a2bc2e43/page/IBM%E5%BC%80%E6%BA%90%E6%8A%80%E6%9C%AF%E5%BE%AE%E8%AE%B2%E5%A0%82)
 
-- 官方开发相关参考：[community:design-proposals](https://github.com/kubernetes/community/tree/master/contributors/design-proposals) 
+- 官方开发相关参考：[community:design-proposals](https://github.com/kubernetes/community/tree/master/contributors/design-proposals) && [community:devel](https://github.com/kubernetes/community/tree/master/contributors/devel)
 
 -  技术博客
     - [我的kubernets整理学习系列](https://yucs.github.io/categories/Kubernetes/)

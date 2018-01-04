@@ -21,16 +21,19 @@ tags:
    - 活跃度方面：贡献参与者多，社区活跃度高，各大公司的认可，无论存储，网络，容器方面都提供更多现成的选择，功能也越来越丰富，生态整体向好。
 
 
-- 在kubernetes和docker两大生态竞争中，毫无疑问kubernetes已胜出。
+- 在kubernetes和docker两大生态竞争中，毫无疑问kubernetes已胜出,k8s已是大趋势。
 
 - 开源也是场各大公司之间的博弈，无烟的战场，谁掌握了标准的制定，就占领了制高点,一言不合就可以让竞争对手举步维艰。
 
 
 
 # [CNCF](https://www.cncf.io/)
+
 [Cloud Native Landscape](https://github.com/cncf/landscape)
 
 [CNCF charter](https://www.cncf.io/about/charter/)
+
+[CNCF 云原生容器生态系统概要](http://dockone.io/article/3006)
 
    - CNCF是一个开源Linux基金会，它致力于推进云端原生应用和服务的开发.
    - CNCF 的一项重要承诺，就是为基于容器的各类技术的集成确立参考架。
@@ -91,6 +94,8 @@ tags:
 
 - CSI是Container Storage Interface的简称，旨在能为容器编排引擎和存储系统间建立一套标准的存储调用接口，通过该接口能为容器编排引擎提供存储服务。
 - 在CSI之前，K8S里提供存储服务是通过一种称为“in-tree”的方式来提供，这种方式需要将存储提供者的代码逻辑放到K8S的代码库中运行，调用引擎与插件间属于强耦合，持这套标准以后，K8S和存储提供者之间将彻底解耦。
+
+
 
 
 
