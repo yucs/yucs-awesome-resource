@@ -3,9 +3,8 @@
 - gitbook:[区块链技术指南](https://github.com/yeasy/blockchain_guide)
 
 - 《区块链技术指南（邹均 著）》
-
-- gitbook: [Hyperledger 源码分析之 Fabric](https://github.com/yeasy/hyperledger_code_fabric/blob/master/SUMMARY.md)
  
+
 # blog 
 - [Hyperledger Fabric账本设计及源码剖析
 ](https://zhuanlan.zhihu.com/p/31170225)

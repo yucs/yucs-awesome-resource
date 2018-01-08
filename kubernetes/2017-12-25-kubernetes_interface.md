@@ -35,6 +35,8 @@ tags:
 
 [CNCF 云原生容器生态系统概要](http://dockone.io/article/3006)
 
+[CNCF 云原生容器生态系统概要](http://cizixs.com/2017/12/30/cncf-cloud-native-landscape)
+
    - CNCF是一个开源Linux基金会，它致力于推进云端原生应用和服务的开发.
    - CNCF 的一项重要承诺，就是为基于容器的各类技术的集成确立参考架。
    - CNCF’s community believe there are three core attributes to cloud native computing:

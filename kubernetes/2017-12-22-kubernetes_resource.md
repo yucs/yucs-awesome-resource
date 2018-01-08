@@ -56,6 +56,7 @@ tags:
 # schedule 
 - [Kubernetes调度详解](http://dockone.io/article/2885)
 - [Kubernetes Scheduler是如何工作的](http://dockone.io/article/2625)
+- [kubernetes 调度器指北](https://ggaaooppeenngg.github.io/zh-CN/2017/09/26/kubernetes-%E6%8C%87%E5%8C%97/)
 
 
 # API 

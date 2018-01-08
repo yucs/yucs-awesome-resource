@@ -1,5 +1,5 @@
 
-##HDFS&glusterfs&ceph 个人理解对比
+## HDFS&glusterfs&ceph 个人理解对比
 
 - glusterfs: 无元数据节点，兼容PAXOS接口的文件系统，可以理解无分片（无建条带层情况下），目录层次，ls等获取列表很卡，架构特点像网络协议栈，一层层处理后数据传到下一层。
 
