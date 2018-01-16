@@ -25,14 +25,23 @@ tags:
 
 -  技术博客
     - [我的kubernets整理学习系列](https://yucs.github.io/categories/Kubernetes/)
-	- [cizixs](http://cizixs.com/) （主要kubelet源码分析）
+	- [cizixs](http://cizixs.com/) 
 	- [WaltonWang](http://blog.csdn.net/WaltonWang/article/list/1)（源码分析多）
  
 
+- docker :[Docker从入门到实践](https://github.com/yeasy/docker_practice)
 --------
 
 # 实践生态
+
+[请注意，容器技术圈已迈入后Kubernetes时代](https://mp.weixin.qq.com/s/0gwRcMdORZcor5rP4Fr7Jw)(好)
+
+
 [Kubernetes的工业级实践](https://mp.weixin.qq.com/s/vyUi1V4pmYQr5_9T2Qqygg)
+
+
+[干货视频 | Kubernetes在vivo容器云平台中的实践](https://mp.weixin.qq.com/s/nNUaL1noCryWm3sVFsy6CQ)
+
 
 <!--[我的kubernets整理学习系列](https://yucs.github.io/categories/Kubernetes/)各文章包含的链接就不在这重复列出
 -->
