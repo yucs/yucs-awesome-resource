@@ -1,8 +1,8 @@
 
 ---
 layout:     post
-title:      " Kubernetes之存储学习整理"
-subtitle:   " Kubernetes之volume学习整理"
+title:      " Kubernetes之存储调研整理"
+subtitle:   " Kubernetes之volume调研整理"
 date:       2017-12-14
 author:     "yucs"
 catalog:    true
@@ -72,6 +72,7 @@ tags:
 [Kubernetes 存储功能和源码深度解析（一）](http://dockone.io/article/2082)
 
 [Kubernetes 存储功能和源码深度解析（二）](http://dockone.io/article/2087)
+[Kubernetes中的Persistent Volume解析](https://jimmysong.io/posts/kubernetes-persistent-volume/)
 
 ![K8S_volume_arch](https://yucs.github.io/picture/K8S_volume_arch.png) 
 ![k8s_volume_arch2](https://yucs.github.io/picture/k8s_volume_arch2.png)
@@ -94,7 +95,15 @@ tags:
  - 非必须controller: 为了在attach卷上支持plugin headless形态，Controller Manager提供配置可以禁用。  
  - 它的核心职责就是当API Server中，有卷声明的pod与node间的关系发生变化时，需要决定是通过调用存储插件将这个pod关联的卷attach到对应node的主机（或者虚拟机）上，还是将卷从node上detach掉.
  
-- K8s挂载卷的基本过程   -  用户创建Pod包含一个PVC   -  Pod被分配到节点NodeA   -  Kubelet等待Volume Manager准备设备   -  PV controller调用相应Volume Plugin(in-tree或者out-of-tree)创建持久化卷并在系统中创建 PV对象以及其与PVC的绑定(Provision)   - Attach/Detach controller或者Volume Manager通过Volume Plugin实现块设备挂载(Attach)  -  Volume Manager等待设备挂载完成，将卷挂载到节点指定目录(mount)  - /var/lib/kubelet/plugins/kubernetes.io/aws-ebs/mounts/vol-xxxxxxxxxxxxxxxxx  -  Kubelet在被告知设备准备好后启动Pod中的容器，利用Docker –v等参数将已经挂载到本地 的卷映射到容器中(volume mapping)
+- K8s挂载卷的基本过程
+   -  用户创建Pod包含一个PVC
+   -  Pod被分配到节点NodeA
+   -  Kubelet等待Volume Manager准备设备
+   -  PV controller调用相应Volume Plugin(in-tree或者out-of-tree)创建持久化卷并在系统中创建 PV对象以及其与PVC的绑定(Provision)
+   - Attach/Detach controller或者Volume Manager通过Volume Plugin实现块设备挂载(Attach)
+  -  Volume Manager等待设备挂载完成，将卷挂载到节点指定目录(mount)
+  - /var/lib/kubelet/plugins/kubernetes.io/aws-ebs/mounts/vol-xxxxxxxxxxxxxxxxx
+  -  Kubelet在被告知设备准备好后启动Pod中的容器，利用Docker –v等参数将已经挂载到本地 的卷映射到容器中(volume mapping)
 
 - PV & PVC状态图
   PV的状态图：

@@ -13,12 +13,14 @@
 	
 	- [kubernetes的思考和那些标准](./kubernetes/2017-12-25-kubernetes_interface.md)
 	
-	- [开发operator扩展kubernetes 资源整理](./kubernetes/2017-12-21-operator.md)
+	- [开发operator扩展kubernetes 调研整理](./kubernetes/2017-12-21-operator.md)
 	
-	- [Kubernetes之存储学习整理](./kubernetes/2017-12-14-kubernetes_volume.md)
+	- [Kubernetes之存储调研整理](./kubernetes/2017-12-14-kubernetes_volume.md)
 	
-	- [Kubernetes网络插件CNI学习整理](./kubernetes/2017-12-6-CNI.md)
+	- [Kubernetes网络插件CNI调研整理](./kubernetes/2017-12-6-CNI.md)
 
+- 2016(old)
+    - [docker&容器网络&微服务](./prepost/docker&容器网络&微服务.md)
 
 # 分布式
 -  2018.1 
@@ -27,16 +29,12 @@
 -  2017.12
     - [分布式系统之基础介绍](./distribute_system/2017-12-9-分布式系统原理之基础介绍.md) 
 
-- 2017(old)
+- 2016(old)
     - [HDFS&glusterfs&ceph 个人理解对比](./prepost/filesystem(ceph,glusterfs,hdfs).md
-)
 
 # develop
 -  2017.11
     - [学好编程语言的方法论（心得)](./develop/2017-11-22-languge.md)
-
-
-
 
 
 
@@ -46,3 +44,6 @@
    - [《图解密码技术》笔记（二）](./blockchain/2017-12-1-cryptology2.md)
 -  2017.11
    - [《图解密码技术》笔记（一）](./blockchain/2017-11-25-cryptology.md)
+
+
+

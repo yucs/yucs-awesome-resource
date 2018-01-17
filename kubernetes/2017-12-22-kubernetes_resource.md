@@ -26,7 +26,7 @@ tags:
 -  技术博客
     - [我的kubernets整理学习系列](https://yucs.github.io/categories/Kubernetes/)
 	- [cizixs](http://cizixs.com/) 
-	- [WaltonWang](http://blog.csdn.net/WaltonWang/article/list/1)（源码分析多）
+	- [https://jimmysong.io](https://jimmysong.io/)
  
 
 - docker :[Docker从入门到实践](https://github.com/yeasy/docker_practice)
