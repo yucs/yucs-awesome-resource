@@ -1,4 +1,21 @@
 
+---
+layout:     post
+title:      golang资源整理
+subtitle:   golang资源整理
+date:       2018-1-17
+author:     "yucs"
+catalog:    true
+comments:  true
+categories: 
+ 	- 编程语言 
+	- 个人见解
+
+tags:
+    - 编程语言
+    
+---
+
 
 # book
 
@@ -20,7 +37,7 @@ gitbook:[Go Web 编程](https://github.com/astaxie/build-web-application-with-go
  [50 个 Go 开发者常犯的错误（英）](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/)
  [Go by Example](https://gobyexample.com/)
 
-##工具&&代码规范
+## 工具&&代码规范
 [go依赖包管理工具对比](https://ieevee.com/tech/2017/07/10/go-import.html)
 
 [持续集成服务 Travis CI 教程](http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html)
@@ -36,8 +53,9 @@ gitbook:[Go Web 编程](https://github.com/astaxie/build-web-application-with-go
 [Go调优神器trace介绍](https://studygolang.com/articles/9693)
 
 
-# 坑：碰过的问题
+# 碰过的问题
   [Killing a child process and all of its children in Go](https://medium.com/@felixge/killing-a-child-process-and-all-of-its-children-in-go-54079af94773)
+
 
 # package
 

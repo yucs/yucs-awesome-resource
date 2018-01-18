@@ -9,7 +9,7 @@
 # kubernetes
 
 - 2017.12
-    - [kubernetes 学习资源汇总（持续更新）](./kubernetes/2017-12-22-kubernetes_resource.md)
+    - [kubernetes 资源整理](./kubernetes/2017-12-22-kubernetes_resource.md)
 	
 	- [kubernetes的思考和那些标准](./kubernetes/2017-12-25-kubernetes_interface.md)
 	
@@ -30,16 +30,20 @@
     - [分布式系统之基础介绍](./distribute_system/2017-12-9-分布式系统原理之基础介绍.md) 
 
 - 2016(old)
-    - [HDFS&glusterfs&ceph 个人理解对比](./prepost/filesystem(ceph,glusterfs,hdfs).md
+    - [HDFS&glusterfs&ceph 个人理解对比](./prepost/filesystem(ceph,glusterfs,hdfs).md)
+
 
 # develop
+- 2018.1
+    - [golang 资源整理](./develop/2018-1-17-golang_resource.md)
 -  2017.11
     - [学好编程语言的方法论（心得)](./develop/2017-11-22-languge.md)
 
 
 
 # blockchain
-
+- 2018.1
+   - [blockchain 资源整理]()
 -  2017.12
    - [《图解密码技术》笔记（二）](./blockchain/2017-12-1-cryptology2.md)
 -  2017.11
