@@ -18,9 +18,8 @@
 	- [Kubernetes之存储调研整理](./kubernetes/2017-12-14-kubernetes_volume.md)
 	
 	- [Kubernetes网络插件CNI调研整理](./kubernetes/2017-12-6-CNI.md)
-
-- 2016(old)
-    - [docker&容器网络&微服务](./prepost/docker&容器网络&微服务.md)
+   
+    - [容器网络&微服务 资源整理](./prepost/docker&容器网络&微服务.md)
 
 # 分布式
 -  2018.1 
@@ -29,7 +28,7 @@
 -  2017.12
     - [分布式系统之基础介绍](./distribute_system/2017-12-9-分布式系统原理之基础介绍.md) 
 
-- 2016(old)
+- 2016
     - [HDFS&glusterfs&ceph 个人理解对比](./prepost/filesystem(ceph,glusterfs,hdfs).md)
 
 

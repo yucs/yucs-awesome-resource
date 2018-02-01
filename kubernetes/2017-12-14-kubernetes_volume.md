@@ -72,7 +72,10 @@ tags:
 [Kubernetes 存储功能和源码深度解析（一）](http://dockone.io/article/2082)
 
 [Kubernetes 存储功能和源码深度解析（二）](http://dockone.io/article/2087)
+
 [Kubernetes中的Persistent Volume解析](https://jimmysong.io/posts/kubernetes-persistent-volume/)
+
+[Kubernetes存储系统介绍及机制实现](https://mp.weixin.qq.com/s/B8aDn_P2Sl5axVkvskLfuA)
 
 ![K8S_volume_arch](https://yucs.github.io/picture/K8S_volume_arch.png) 
 ![k8s_volume_arch2](https://yucs.github.io/picture/k8s_volume_arch2.png)
