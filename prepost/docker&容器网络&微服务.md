@@ -4,15 +4,19 @@
 
 - [容器网络大观](http://www.sdnlab.com/17141.html)（好）
 
-- [测试Docker多主机网络性能](http://www.tuicool.com/articles/uMzmyq3)
-
 - [图解Kubernetes网络](https://mp.weixin.qq.com/s/NETiIHI7pib1Ws6ltPDtjA)  2018-02-01
+
+- [探索Kubernetes的网络原理及方案](http://www.dockone.io/article/2392)
+
+- [测试Docker多主机网络性能](http://www.tuicool.com/articles/uMzmyq3)
 
 - [将 Docker 网络方案进行到底](http://mp.weixin.qq.com/s?__biz=MzA3MDg4Nzc2NQ==&mid=2652133664&idx=1&sn=e96085a945eea13a948779b231af558e&scene=0#wechat_redirect)
 
 - [Building High-Performance NFV Solutions Using Containers](http://events.linuxfoundation.org/sites/events/files/slides/Jun_Nakajima_NFV_Container_final.pdf)
 
 - [docker的网络-Container network interface(CNI)与Container network model(CNM)](https://xuxinkun.github.io/2016/07/22/cni-cnm/)&&[Docker 1.12 - Macvlan](https://raesene.github.io/blog/2016/07/23/Docker-MacVLAN/)
+
+- [图解几个与Linux网络虚拟化相关的虚拟网卡-VETH/MACVLAN/MACVTAP/IPVLAN](http://blog.csdn.net/dog250/article/details/45788279)
 
 - [技术实践|洪强宁:宜信PaaS平台基于Calico的容器](http://mt.sohu.com/20160225/n438516745.shtml)&[PPTV Docker集群的网络方案选型 ](http://www.tuicool.com/articles/UbeyEj3)
 
@@ -32,6 +36,7 @@
 
 # docker 
 - [Docker生态会重蹈Hadoop的覆辙吗？](http://mp.weixin.qq.com/s?__biz=MzA5NDg3ODMxNw==&mid=2649535024&idx=1&sn=5e15a1afd3adfd3dca538c688e28d1e2&scene=1&srcid=0823tcjhhk21e4dFuI7CT3Iu#rd)
+- [Docker 核心技术与实现原理](https://draveness.me/docker)
 - [10张图带你深入理解Docker容器和镜像](http://dockone.io/article/783)
 - [Cgroups介绍](https://sysadmincasts.com/episodes/14-introduction-to-linux--control-groups-cgroups) &&  [cgroups](http://www.slideshare.net/jpetazzo/anatomy-of-a-container-namespaces-cgroups-some-filesystem-magic-linuxcon?qid=358ef0f1-db29-4bb2-91ff-3817674ae0da&v=&b=&from_search=1) && [cgroups](http://www.slideshare.net/kerneltlv/namespaces-and-cgroups-the-basis-of-linux-containers?qid=769991d4-38c1-426d-bb89-0597cfdb362a&v=&b=&from_search=3)
 
